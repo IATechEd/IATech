@@ -1,26 +1,30 @@
 [
     {
-        "competition": "CornCon High School CTF Competition",
+        "competition": "2024 CornCon High School CTF Competition",
         "position": "1st",
         "colorClass": "bg-gold"
     },
     {
-        "competition": "National Cyber League (CyberSkyline) Team Competition",
+        "competition": "ISU's 2024 Community College Cyber Defense Competition",
+        "position": "1st",
+        "colorClass": "bg-gold"
+    {
+        "competition": "2024 National Cyber League (CyberSkyline) Team Competition",
         "position": "Top 2%",
         "colorClass": "bg-gold"
     },
     {
-        "competition": "Jef - National Cyber League (CyberSkyline) Individual Competition",
+        "competition": "Jef - 2024 National Cyber League (CyberSkyline) Individual Competition",
         "position": "Top 1%",
         "colorClass": "bg-gold"
     },
     {
-        "competition": "Alex - National Cyber League (CyberSkyline) Individual Competition",
+        "competition": "Alex - 2024 National Cyber League (CyberSkyline) Individual Competition",
         "position": "Top 2%",
         "colorClass": "bg-gold"
     },
     {
-        "competition": "Irene - National Cyber League (CyberSkyline) Individual Competition",
+        "competition": "Irene - 2024 National Cyber League (CyberSkyline) Individual Competition",
         "position": "Top 2%",
         "colorClass": "bg-gold"
     }
