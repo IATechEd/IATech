@@ -38,6 +38,6 @@ Once your PR is reviewed and approved, your changes will be merged, and the webs
 
 ## Contact
 
-If you have any questions or need help with contributing, feel free to reach out to the Iowa Technology Club team.
+If you have any questions or need help with contributing, feel free to reach out to the Iowa Technology Club team at [contact@iateched.org](mailto:cotact@iateched.org).
 
 Happy coding!
