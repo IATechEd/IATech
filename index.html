@@ -28,27 +28,53 @@
     <!-- Header -->
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Iowa Tech Education</span>
-            <img class="h-16 w-auto" src="/images/logo.png" alt="IATech logo" />
-          </a>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="/index.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Home</a> <!-- Landing page -->
-          <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">About Us</a> <!-- About the club -->
-          <a href="/html/members.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Members</a> <!-- People and socials -->
-          <a href="/html/achievements.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Achievements</a> <!-- Club achievements (placements) -->
-          <a href="/html/projects.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Projects</a> <!-- Projects we have worked on -->
-          <!-- <a href="#" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Blog</a> -->
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span
-              aria-hidden="true">&rarr;</span></a>
-        </div>
+          <div class="flex lg:flex-1">
+              <a href="/index.html" class="-m-1.5 p-1.5">
+                  <span class="sr-only">SynagogueCentral</span>
+                  <img class="h-16 w-auto" src="/images/logo.png" alt="SynagogueCentral Logo" />
+              </a>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+              <a href="/index.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Home</a>
+              <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">About Us</a>
+              <a href="/html/members.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Members</a>
+              <a href="/html/achievements.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Achievements</a>
+              <a href="/html/projects.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Projects</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+              <a href="https://github.com/IATechEd/IATech/pulls" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+              <button onclick="toggleNavbar()" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#d9d9d9]">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+              </button>
+          </div>
       </nav>
-    </header>
-
+  
+      <!-- Mobile menu -->
+      <div id="mobileNavbar" class="hidden lg:hidden bg-[#d9d9d9] absolute w-full h-screen top-[76px]">
+          <div class="space-y-2 px-6 pb-6 pt-2">
+              <a href="/index.html" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">Home</a>
+              <a href="/html/about.html" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">About Us</a>
+              <a href="/html/members.html" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">Members</a>
+              <a href="/html/achievements.html" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">Achievements</a>
+              <a href="/html/projects.html" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">Projects</a>
+              <a href="https://github.com/IATechEd/IATech/pulls" target="_blank" rel="noopener noreferrer" class="block text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2">Open a PR</a>
+          </div>
+      </div>
+  </header>
+  
+  <script>
+      function toggleNavbar() {
+          const navbar = document.getElementById('mobileNavbar');
+          navbar.classList.toggle('hidden');
+      }
+  </script>
+  
     <div class="relative isolate px-6 pt-14 lg:px-8">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true">
