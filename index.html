@@ -7,20 +7,195 @@
 
   <title>IATech</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
 
   <link rel="icon" type="image/png" href="images/logo.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <script src="/index.js"></script>
-  
-  <style>
-    .bg-gold { background-color: #ffff5a77; }
-    .bg-silver { background-color: #c0c0c08a; }
-    .bg-bronze { background-color: #c59948ad; }
-  </style>
 
+  <style>
+    .bg-gold {
+      background-color: #ffff5a77;
+    }
+
+    .bg-silver {
+      background-color: #c0c0c08a;
+    }
+
+    .bg-bronze {
+      background-color: #c59948ad;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #232323;
+      color: #cdcdcd;
+      font-family: "Avenir Next", "Avenir", sans-serif;
+    }
+
+    main {
+      width: calc(100% - 240px);
+      max-width: 680px;
+      margin: 100px auto;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    #menuToggle {
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    #menuToggle a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+      color: rgb(0, 183, 255);
+    }
+
+    #menuToggle input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+      -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #ffffff;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+      transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #0099ff;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 50px;
+      padding-top: 125px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      background: #000000;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      transform: translate(-100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    nav .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Center align items */
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Space items apart */
+    }
+    
+    #menu li {
+      padding: 10px 0;
+      font-size: 22px;
+    }
+
+    #menu li label {
+      cursor: pointer;
+    }
+
+    #menuToggle input:checked~ul {
+      transform: none;
+    }
+
+    .logo {
+      position: static;
+    }
+
+    .logo img {
+      height: 64px;
+    }
+
+    @media (min-width : 1024px) {
+      menu {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #menu li {
+        margin: 0 15px;
+        padding: 0;
+        font-size: 16px;
+      }
+
+      #menuToggle {
+        display: none;
+      }
+
+      .logo {
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
+  </style>
 </head>
 
 <body class="font-sans antialiased bg-[#121212] text-[#d9d9d9] overflow-hidden">
@@ -28,33 +203,52 @@
     <!-- Header -->
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Iowa Tech Education</span>
-            <img class="h-16 w-auto" src="/images/logo.png" alt="IATech logo" />
+        <div class="flex items-center justify-between w-full lg:w-auto">
+          <a href="#" class="logo">
+            <img src="/images/logo.png" alt="IATech Logo" />
           </a>
+          <nav role="navigation" class="lg:hidden">
+            <div id="menuToggle">
+              <input type="checkbox" id="menuCheckbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/html/about.html">About Us</a></li>
+                <li><a href="/html/members.html">Members</a></li>
+                <li><a href="/html/achievements.html">Achievements</a></li>
+                <li><a href="/html/projects.html">Projects</a></li>
+                <li><a href="https://github.com/Jossey28/IATech/pulls" target="_blank">GitHub</a></li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="/index.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Home</a> <!-- Landing page -->
-          <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">About Us</a> <!-- About the club -->
-          <a href="/html/members.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Members</a> <!-- People and socials -->
-          <a href="/html/achievements.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Achievements</a> <!-- Club achievements (placements) -->
-          <a href="/html/projects.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Projects</a> <!-- Projects we have worked on -->
-          <!-- <a href="#" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Blog</a> -->
+        <!-- Desktop navigation -->
+        <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
+          <a href="/index.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Home</a>
+          <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">About Us</a>
+          <a href="/html/members.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Members</a>
+          <a href="/html/achievements.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Achievements</a>
+          <a href="/html/projects.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Projects</a>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span
-              aria-hidden="true">&rarr;</span></a>
+        <!-- GitHub Link -->
+        <div class="hidden lg:flex lg:justify-end">
+          <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer"
+            class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
+      <!-- Mobile Dropdown Menu -->
     </header>
+  </div>
 
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true">
-        <div
-          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#5e43f3] to-[#7a5af5] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style="
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#5e43f3] to-[#7a5af5] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
               clip-path: polygon(
                 74.1% 44.1%,
                 100% 61.6%,
@@ -74,40 +268,40 @@
                 74.1% 44.1%
               );
             "></div>
-      </div>
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-          <div
-            class="relative rounded-full px-3 py-1 text-sm leading-6 text-[#d9d9d9] ring-1 ring-[#d9d9d9]/10 hover:ring-[#d9d9d9]/20">
-            We just won the Iowa State University Cyber Defense Competition!
-            <a href="https://iscore.iseage.org/" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600"><span class="absolute inset-0"
-                aria-hidden="true"></span>Read
-              more <span aria-hidden="true">&rarr;</span></a>
-          </div>
-        </div>
-        <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-[#d9d9d9] sm:text-6xl">
-            Empowering Students in
-            <span class="underline underline-offset-4">Cybersecurity</span>
-            and <span class="underline underline-offset-4">Tech</span>.
-          </h1>
-          <p class="mt-6 text-lg leading-8 text-[#d9d9d9]">
-            Prepare, compete, and excel in cyber, as well as other technical
-            challenges while expanding your expertise across the ever-evolving
-            tech landscape.
-          </p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Learn more <span
-                aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        aria-hidden="true">
+    </div>
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
         <div
-          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#5e43f3] to-[#7a5af5] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          style="
+          class="relative rounded-full px-3 py-1 text-sm leading-6 text-[#d9d9d9] ring-1 ring-[#d9d9d9]/10 hover:ring-[#d9d9d9]/20">
+          We just won the Iowa State University Cyber Defense Competition!
+          <a href="https://iscore.iseage.org/" target="_blank" rel="noopener noreferrer"
+            class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read
+            more <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-[#d9d9d9] sm:text-6xl">
+          Empowering Students in
+          <span class="underline underline-offset-4">Cybersecurity</span>
+          and <span class="underline underline-offset-4">Tech</span>.
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-[#d9d9d9]">
+          Prepare, compete, and excel in cyber, as well as other technical
+          challenges while expanding your expertise across the ever-evolving
+          tech landscape.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Learn more <span
+              aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+      aria-hidden="true">
+      <div
+        class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#5e43f3] to-[#7a5af5] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+        style="
               clip-path: polygon(
                 74.1% 44.1%,
                 100% 61.6%,
@@ -127,21 +321,26 @@
                 74.1% 44.1%
               );
             ">
-         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="absolute left-[50%] translate-x-[-50%] bottom-0 z-50">
-      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="https://www.instagram.com/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram -->
-          <a href="https://www.linkedin.com/company/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-linkedin-in"></i></a> <!-- LinkedIn -->
-          <!-- <a href="/html/members.html" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-facebook-f"></i></a> Facebook -->
-          <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-github"></i></a> <!-- Github -->
-        </div>
-      </nav>
-    </footer>
-  </div>  
+  <footer class="absolute left-[50%] translate-x-[-50%] bottom-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="https://www.instagram.com/iateched/" target="_blank"
+          class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-instagram"></i></a>
+        <!-- Instagram -->
+        <a href="https://www.linkedin.com/company/iateched/" target="_blank"
+          class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-linkedin-in"></i></a>
+        <!-- LinkedIn -->
+        <!-- <a href="/html/members.html" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i class="fa-brands fa-facebook-f"></i></a> Facebook -->
+        <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]"><i
+            class="fa-brands fa-github"></i></a> <!-- Github -->
+      </div>
+    </nav>
+  </footer>
+  </div>
 </body>
 
 </html>
