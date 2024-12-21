@@ -215,6 +215,54 @@
       height: 64px;
     }
 
+    .animated-border {
+  position: relative;
+  overflow: visible; /* Ensure the border is visible */
+  border-radius: inherit; /* Match the border radius of the parent */
+  padding: 0.5rem 1rem; /* Adjust padding for snug fit */
+  font-size: 1.25rem; /* Maintain larger text */
+  line-height: 1.75rem; /* Maintain readability */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Enhance visibility */
+  display: inline-block; /* Shrink-wrap the width to fit content */
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: -4px; /* Thickness of the animated border */
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
+  background-size: 300% 300%;
+  border-radius: inherit; /* Match the border radius of the parent */
+  z-index: -1; /* Position the border behind the content */
+  animation: borderAnimation 8s linear infinite;
+}
+
+/* Add transition to the base nav-link class */
+.nav-link {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Apply glow effect on hover */
+.nav-link:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
     @media (min-width : 1024px) {
       menu {
         display: none;
@@ -269,11 +317,11 @@
         </div>
         <!-- Desktop navigation -->
         <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
-          <a href="/index.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Home</a>
-          <a href="/html/about.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">About Us</a>
-          <a href="/html/members.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Members</a>
-          <a href="/html/achievements.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Achievements</a>
-          <a href="/html/projects.html" class="text-sm font-semibold leading-6 text-[#d9d9d9]">Projects</a>
+          <a href="/index.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
+          <a href="/html/about.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
+          <a href="/html/members.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
+          <a href="/html/achievements.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
+          <a href="/html/projects.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
         </div>
         <!-- GitHub Link -->
         <div class="hidden lg:flex lg:justify-end">
