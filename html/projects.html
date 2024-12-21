@@ -14,34 +14,34 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        async function loadProjects() {
-            try {
-                const response = await fetch('/JSON/projects.json');
-                const projects = await response.json();
+      async function loadProjects() {
+        try {
+          const response = await fetch('/JSON/projects.json');
+          const projects = await response.json();
 
-                const projectsGrid = document.getElementById('projects-grid');
+          const projectsGrid = document.getElementById('projects-grid');
 
-                projects.forEach(project => {
-                const projectCard = document.createElement('a');
-                projectCard.href = project.link;
-                projectCard.target = '_blank';
-                projectCard.rel = 'noopener noreferrer';
-                projectCard.className = 'shadow-md rounded-lg overflow-hidden';
-                projectCard.innerHTML = `
-                            <div class="p-4">
-                                <h4 class="text-xl font-bold">${project.title}</h4>
-                                <p class="text-[#d9d9d9]">By: ${project.authors}</p>
-                                <p class="mt-2 text-[#d9d9d9]">${project.description}</p>
-                            </div>
-                        `;
-                projectsGrid.appendChild(projectCard);
-                });
-            } catch (error) {
-                console.error('Error loading projects:', error);
-            }
+          projects.forEach(project => {
+          const projectCard = document.createElement('a');
+          projectCard.href = project.link;
+          projectCard.target = '_blank';
+          projectCard.rel = 'noopener noreferrer';
+          projectCard.className = 'shadow-2xl rounded-lg overflow-hidden';
+          projectCard.innerHTML = `
+                <div class="p-4">
+                  <h4 class="text-xl font-bold">${project.title}</h4>
+                  <p class="text-[#d9d9d9]">By: ${project.authors}</p>
+                  <p class="mt-2 text-[#d9d9d9]">${project.description}</p>
+                </div>
+              `;
+          projectsGrid.appendChild(projectCard);
+          });
+        } catch (error) {
+          console.error('Error loading projects:', error);
         }
+      }
 
-        document.addEventListener('DOMContentLoaded', loadProjects);
+      document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
 
 <style>
