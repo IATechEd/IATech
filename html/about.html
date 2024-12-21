@@ -2,334 +2,359 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>IATech</title>
+  <title>IATech</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
 
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Raleway', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
 
-    <style>
-      .bg-gold {
-        background-color: #ffff5a77;
+  <style>
+    .bg-gold {
+      background-color: #ffff5a77;
+    }
+
+    .bg-silver {
+      background-color: #c0c0c08a;
+    }
+
+    .bg-bronze {
+      background-color: #c59948ad;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #232323;
+      color: #cdcdcd;
+    }
+
+    main {
+      width: calc(100% - 240px);
+      max-width: 680px;
+      margin: 100px auto;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    #menuToggle {
+      display: block;
+      position: sticky;
+      top: 50px;
+      right: 50px;
+      left: auto;
+      z-index: 1;
+      -webkit-user-select: none;
+      user-select: none;
+      padding: 1rem;
+    }
+
+    #menuToggle a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+      color: rgb(0, 183, 255);
+    }
+
+    #menuToggle input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+      -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #ffffff;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+      transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #0099ff;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 50px;
+      padding-top: 125px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      background: #000000;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      transform: translate(-100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    nav .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Center align items */
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Space items apart */
+    }
+
+    .logo {
+      margin-right: auto;
+      /* Push logo to the right */
+    }
+
+    #menu li {
+      padding: 10px 0;
+      font-size: 22px;
+    }
+
+    #menu li label {
+      cursor: pointer;
+    }
+
+    #menuToggle input:checked~ul {
+      transform: none;
+    }
+
+    .logo img {
+      height: 64px;
+    }
+
+    .animated-border {
+      position: relative;
+      overflow: visible;
+      /* Ensure the border is visible */
+      border-radius: inherit;
+      /* Match the border radius of the parent */
+      padding: 0.5rem 1rem;
+      /* Adjust padding for snug fit */
+      font-size: 1.25rem;
+      /* Maintain larger text */
+      line-height: 1.75rem;
+      /* Maintain readability */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* Optional: Enhance visibility */
+      display: inline-block;
+      /* Shrink-wrap the width to fit content */
+    }
+
+    .animated-border::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      /* Thickness of the animated border */
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
+      background-size: 300% 300%;
+      border-radius: inherit;
+      /* Match the border radius of the parent */
+      z-index: -1;
+      /* Position the border behind the content */
+      animation: borderAnimation 8s linear infinite;
+    }
+
+    /* Add transition to the base nav-link class */
+    .nav-link {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    /* Apply glow effect on hover */
+    .nav-link:hover {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        background-position: 0% 50%;
       }
-  
-      .bg-silver {
-        background-color: #c0c0c08a;
+
+      50% {
+        background-position: 100% 50%;
       }
-  
-      .bg-bronze {
-        background-color: #c59948ad;
+
+      100% {
+        background-position: 0% 50%;
       }
-  
-  
-      body {
-        margin: 0;
-        padding: 0;
-        background: #232323;
-        color: #cdcdcd;
-        font-family: "Avenir Next", "Avenir", sans-serif;
-      }
-  
-      main {
-        width: calc(100% - 240px);
-        max-width: 680px;
-        margin: 100px auto;
-      }
-  
-      p {
-        font-size: 18px;
-        line-height: 28px;
-      }
-  
-      * {
-        scroll-behavior: smooth;
-      }
-  
-      #menuToggle {
-        display: block;
-        position: sticky;
-        top: 50px;
-        right: 50px;
-        left: auto;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-        padding: 1rem;
-      }
-  
-      #menuToggle a {
-        text-decoration: none;
-        color: #ffffff;
-        transition: color 0.3s ease;
-      }
-  
-      #menuToggle a:hover {
-        color: rgb(0, 183, 255);
-      }
-  
-      #menuToggle input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
-        -webkit-touch-callout: none;
-      }
-  
-      #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #ffffff;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
-      }
-  
-      #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-      }
-  
-      #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-      }
-  
-      #menuToggle input:checked~span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #0099ff;
-      }
-  
-      #menuToggle input:checked~span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-      }
-  
-      #menuToggle input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-      }
-  
-      #menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 50px;
-        padding-top: 125px;
-        box-sizing: border-box;
-        overflow-y: auto;
-        background: #000000;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-      }
-  
-      nav .flex {
-        display: flex;
-        align-items: center;
+    }
+
+    @media (min-width : 1024px) {
+      menu {
+        display: none;
         justify-content: center;
-        /* Center align items */
-      }
-  
-      nav {
-        display: flex;
         align-items: center;
-        justify-content: space-between;
-        /* Space items apart */
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
-  
-      .logo {
-        margin-right: auto;
-        /* Push logo to the right */
-      }
-  
+
       #menu li {
-        padding: 10px 0;
-        font-size: 22px;
-      }
-  
-      #menu li label {
-        cursor: pointer;
-      }
-  
-      #menuToggle input:checked~ul {
-        transform: none;
-      }
-  
-      .logo img {
-        height: 64px;
+        margin: 0 15px;
+        padding: 0;
+        font-size: 16px;
       }
 
-      .animated-border {
-  position: relative;
-  overflow: visible; /* Ensure the border is visible */
-  border-radius: inherit; /* Match the border radius of the parent */
-  padding: 0.5rem 1rem; /* Adjust padding for snug fit */
-  font-size: 1.25rem; /* Maintain larger text */
-  line-height: 1.75rem; /* Maintain readability */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Enhance visibility */
-  display: inline-block; /* Shrink-wrap the width to fit content */
-}
-
-.animated-border::before {
-  content: "";
-  position: absolute;
-  top: -4px; /* Thickness of the animated border */
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
-  background-size: 300% 300%;
-  border-radius: inherit; /* Match the border radius of the parent */
-  z-index: -1; /* Position the border behind the content */
-  animation: borderAnimation 8s linear infinite;
-}
-
-/* Add transition to the base nav-link class */
-.nav-link {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Apply glow effect on hover */
-.nav-link:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: #ffffff;
-}
-
-@keyframes borderAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-  
-      @media (min-width : 1024px) {
-        menu {
-          display: none;
-          justify-content: center;
-          align-items: center;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-  
-        #menu li {
-          margin: 0 15px;
-          padding: 0;
-          font-size: 16px;
-        }
-  
-        #menuToggle {
-          display: none;
-        }
-  
-        .logo {
-          position: relative;
-        }
+      #menuToggle {
+        display: none;
       }
-    </style>
-  </head>
-  
-  <body class="font-sans antialiased bg-[#121212] text-[#d9d9d9]">
-    <div class="bg-[#121212]">
-      <!-- Header -->
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div class="flex items-center justify-between w-full lg:w-auto">
-            <a href="#" class="logo">
-              <img src="/images/logo.png" alt="IATech Logo" />
-            </a>
-            <nav role="navigation" class="lg:hidden">
-              <div id="menuToggle">
-                <input type="checkbox" id="menuCheckbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                  <li><a href="/index.html">Home</a></li>
-                  <li><a href="/html/about.html">About Us</a></li>
-                  <li><a href="/html/members.html">Members</a></li>
-                  <li><a href="/html/achievements.html">Achievements</a></li>
-                  <li><a href="/html/projects.html">Projects</a></li>
-                  <li><a href="https://github.com/Jossey28/IATech/pulls" target="_blank">GitHub</a></li>
-                </ul>
-              </div>
-          </div>
-          <!-- Desktop navigation -->
-          <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
-            <a href="/index.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
-            <a href="/html/about.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
-            <a href="/html/members.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
-            <a href="/html/achievements.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
-            <a href="/html/projects.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
-          </div>
-          <!-- GitHub Link -->
-          <div class="hidden lg:flex lg:justify-end">
-            <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
-          </div>
-        </nav>
-      </header>
-    </div>
+
+      .logo {
+        position: relative;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-[#121212] text-[#d9d9d9]">
+  <div class="bg-[#121212]">
+    <!-- Header -->
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex items-center justify-between w-full lg:w-auto">
+          <a href="#" class="logo">
+            <img src="/images/logo.png" alt="IATech Logo" />
+          </a>
+          <nav role="navigation" class="lg:hidden">
+            <div id="menuToggle">
+              <input type="checkbox" id="menuCheckbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/html/about.html">About Us</a></li>
+                <li><a href="/html/members.html">Members</a></li>
+                <li><a href="/html/achievements.html">Achievements</a></li>
+                <li><a href="/html/projects.html">Projects</a></li>
+                <li><a href="https://github.com/Jossey28/IATech/pulls" target="_blank">GitHub</a></li>
+              </ul>
+            </div>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
+          <a href="/index.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
+          <a href="/html/about.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
+          <a href="/html/members.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
+          <a href="/html/achievements.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
+          <a href="/html/projects.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
+        </div>
+        <!-- GitHub Link -->
+        <div class="hidden lg:flex lg:justify-end">
+          <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer"
+            class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </nav>
     </header>
+  </div>
+  </header>
 
-        <section id="about-us" class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
-            <div
-              class="absolute inset-0 -z-10 opacity-20">
-            </div>
-            <div class="mx-auto max-w-2xl lg:max-w-4xl">
-              <h2 class="text-3xl font-extrabold leading-9 text-[#d9d9d9] sm:text-4xl sm:leading-10">About Us</h2>
-              <figure class="mt-10">
-                <blockquote class="text-left text-xl font-semibold leading-8 text-[#d9d9d9] sm:text-2xl sm:leading-9">
-                  <p>Welcome to the Central Campus Tech Club! We are a passionate group of students dedicated to exploring the
-                    world of technology, with a strong focus on cybersecurity. Our mission is to equip our members with the
-                    skills and knowledge needed to excel in the rapidly evolving tech landscape.</p>
-                  <br>
-                  <p>Located at Central Campus, our club is more than just a gathering of tech enthusiasts—it's a hub for
-                    innovation, collaboration, and competition. We regularly participate in cybersecurity competitions, striving
-                    to be the best and bring pride to our school.</p>
-                  <br>
-                  <p>Whether you're a seasoned coder or just beginning your journey in cybersecurity, our club offers something
-                    for everyone. Join us as we push the boundaries of what's possible in the digital world, learn together, and
-                    aim for excellence in every challenge we take on.</p>
-                </blockquote>
-              </figure>
-            </div>
-          </section>
-
-          <footer class="fixed inset-x-0 bottom-0 z-50 bg-[#121212]">
-            <nav class="flex items-center justify-center p-6" aria-label="Global">
-                <div class="flex gap-x-12">
-                    <a href="https://www.instagram.com/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a> <!-- Instagram -->
-                    <a href="https://www.linkedin.com/company/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a> <!-- LinkedIn -->
-                    <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                        <i class="fa-brands fa-github"></i>
-                    </a> <!-- Github -->
-                </div>
-            </nav>
-        </footer>
+  <section id="about-us" class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
+    <div class="absolute inset-0 -z-10 opacity-20">
     </div>
+    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+      <h2 class="text-3xl font-extrabold leading-9 text-[#d9d9d9] sm:text-4xl sm:leading-10">About Us</h2>
+      <figure class="mt-10">
+        <blockquote class="text-left text-xl font-semibold leading-8 text-[#d9d9d9] sm:text-2xl sm:leading-9">
+          <p>Welcome to the Central Campus Tech Club! We are a passionate group of students dedicated to exploring the
+            world of technology, with a strong focus on cybersecurity. Our mission is to equip our members with the
+            skills and knowledge needed to excel in the rapidly evolving tech landscape.</p>
+          <br>
+          <p>Located at Central Campus, our club is more than just a gathering of tech enthusiasts—it's a hub for
+            innovation, collaboration, and competition. We regularly participate in cybersecurity competitions, striving
+            to be the best and bring pride to our school.</p>
+          <br>
+          <p>Whether you're a seasoned coder or just beginning your journey in cybersecurity, our club offers something
+            for everyone. Join us as we push the boundaries of what's possible in the digital world, learn together, and
+            aim for excellence in every challenge we take on.</p>
+        </blockquote>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="fixed inset-x-0 bottom-0 z-50 bg-[#121212]">
+    <nav class="flex items-center justify-center p-6" aria-label="Global">
+      <div class="flex gap-x-12">
+        <a href="https://www.instagram.com/iateched/" target="_blank"
+          class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+          <i class="fa-brands fa-instagram"></i>
+        </a> <!-- Instagram -->
+        <a href="https://www.linkedin.com/company/iateched/" target="_blank"
+          class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a> <!-- LinkedIn -->
+        <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+          <i class="fa-brands fa-github"></i>
+        </a> <!-- Github -->
+      </div>
+    </nav>
+  </footer>
+  </div>
 </body>

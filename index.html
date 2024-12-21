@@ -7,7 +7,8 @@
 
   <title>IATech</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
 
   <link rel="icon" type="image/png" href="images/logo.png" />
 
@@ -27,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <script src="/index.js"></script>
   <style src="/unfinishedbg.css"></style>
-  
+
   <style>
     .bg-gold {
       background-color: #ffff5a77;
@@ -48,8 +49,9 @@
       background: #000000;
       color: #cdcdcd;
     }
+
     #bg {
-    filter: blur(10px) brightness(35%);
+      filter: blur(10px) brightness(35%);
     }
 
     p {
@@ -210,190 +212,212 @@
     }
 
     .animated-border {
-  position: relative;
-  overflow: visible; /* Ensure the border is visible */
-  border-radius: inherit; /* Match the border radius of the parent */
-  padding: 0.5rem 1rem; /* Adjust padding for snug fit */
-  font-size: 1.25rem; /* Maintain larger text */
-  line-height: 1.75rem; /* Maintain readability */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Enhance visibility */
-  display: inline-block; /* Shrink-wrap the width to fit content */
-}
+      position: relative;
+      overflow: visible;
+      /* Ensure the border is visible */
+      border-radius: inherit;
+      /* Match the border radius of the parent */
+      padding: 0.5rem 1rem;
+      /* Adjust padding for snug fit */
+      font-size: 1.25rem;
+      /* Maintain larger text */
+      line-height: 1.75rem;
+      /* Maintain readability */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* Optional: Enhance visibility */
+      display: inline-block;
+      /* Shrink-wrap the width to fit content */
+    }
 
-.animated-border::before {
-  content: "";
-  position: absolute;
-  top: -4px; /* Thickness of the animated border */
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
-  background-size: 300% 300%;
-  border-radius: inherit; /* Match the border radius of the parent */
-  z-index: -1; /* Position the border behind the content */
-  animation: borderAnimation 8s linear infinite;
-}
+    .animated-border::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      /* Thickness of the animated border */
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
+      background-size: 300% 300%;
+      border-radius: inherit;
+      /* Match the border radius of the parent */
+      z-index: -1;
+      /* Position the border behind the content */
+      animation: borderAnimation 8s linear infinite;
+    }
 
-/* Add transition to the base nav-link class */
-.nav-link {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    /* Add transition to the base nav-link class */
+    .nav-link {
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-/* Apply glow effect on hover */
-.nav-link:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: #ffffff;
-}
+    /* Apply glow effect on hover */
+    .nav-link:hover {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+    }
 
-@keyframes borderAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    @keyframes borderAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 
 <div id="bg">
   <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-      <defs>
-          <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 128, 128, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 128, 128, 0)"></stop>
-          </radialGradient>
-          <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 255, 0, 0)"></stop>
-          </radialGradient>
-          <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 255, 255, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 255, 255, 0)"></stop>
-          </radialGradient>
-          <radialGradient id="Gradient4" cx="50%" cy="50%" fx="4.56417%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="23s" values="0%;5%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 128, 0, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 128, 0, 0)"></stop>
-          </radialGradient>
-          <radialGradient id="Gradient5" cx="50%" cy="50%" fx="2.65405%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="24.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 0, 255, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 0, 255, 0)"></stop>
-          </radialGradient>
-          <radialGradient id="Gradient6" cx="50%" cy="50%" fx="0.981338%" fy="50%" r=".5">
-              <animate attributeName="fx" dur="25.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
-              <stop offset="0%" stop-color="rgba(0, 0, 128, 1)"></stop>
-              <stop offset="100%" stop-color="rgba(0, 0, 128, 0)"></stop>
-          </radialGradient>
-      </defs>
-      <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)" transform="rotate(334.41 50 50)">
-          <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate>
-          <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s" repeatCount="indefinite"></animateTransform>
-      </rect>
-      <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)" transform="rotate(255.072 50 50)">
-          <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate>
-          <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate>
-          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s" repeatCount="indefinite"></animateTransform>
-      </rect>
-      <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)" transform="rotate(139.903 50 50)">
-          <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-          <animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-          <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s" repeatCount="indefinite"></animateTransform>
-      </rect>
+    <defs>
+      <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 128, 128, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 128, 128, 0)"></stop>
+      </radialGradient>
+      <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 255, 0, 0)"></stop>
+      </radialGradient>
+      <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 255, 255, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 255, 255, 0)"></stop>
+      </radialGradient>
+      <radialGradient id="Gradient4" cx="50%" cy="50%" fx="4.56417%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="23s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 128, 0, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 128, 0, 0)"></stop>
+      </radialGradient>
+      <radialGradient id="Gradient5" cx="50%" cy="50%" fx="2.65405%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="24.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 0, 255, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 0, 255, 0)"></stop>
+      </radialGradient>
+      <radialGradient id="Gradient6" cx="50%" cy="50%" fx="0.981338%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="25.5s" values="0%;5%;0%" repeatCount="indefinite"></animate>
+        <stop offset="0%" stop-color="rgba(0, 0, 128, 1)"></stop>
+        <stop offset="100%" stop-color="rgba(0, 0, 128, 0)"></stop>
+      </radialGradient>
+    </defs>
+    <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)" transform="rotate(334.41 50 50)">
+      <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate>
+      <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s"
+        repeatCount="indefinite"></animateTransform>
+    </rect>
+    <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)"
+      transform="rotate(255.072 50 50)">
+      <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate>
+      <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate>
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s"
+        repeatCount="indefinite"></animateTransform>
+    </rect>
+    <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)" transform="rotate(139.903 50 50)">
+      <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+      <animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+      <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s"
+        repeatCount="indefinite"></animateTransform>
+    </rect>
   </svg>
 </div>
-  <body class="font-sans antialiased text-[#d9d9d9] overflow-hidden">
-    <header class="absolute inset-x-0 top-0 z-50">
-      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div class="flex items-center justify-between w-full lg:w-auto">
-          <a href="#" class="logo">
-            <img src="/images/logo.png" alt="IATech Logo" />
-          </a>
-          <nav role="navigation" class="lg:hidden">
-            <div id="menuToggle">
-              <input type="checkbox" id="menuCheckbox" />
-              <span></span>
-              <span></span>
-              <span></span>
-              <ul id="menu">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/html/about.html">About Us</a></li>
-                <li><a href="/html/members.html">Members</a></li>
-                <li><a href="/html/achievements.html">Achievements</a></li>
-                <li><a href="/html/projects.html">Projects</a></li>
-                <li><a href="https://github.com/Jossey28/IATech/pulls" target="_blank">GitHub</a></li>
-              </ul>
-            </div>
-        </div>
-        <!-- Desktop navigation -->
-        <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
-          <a href="/index.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
-          <a href="/html/about.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
-          <a href="/html/members.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
-          <a href="/html/achievements.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
-          <a href="/html/projects.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
-        </div>
-        <!-- GitHub Link -->
-        <div class="hidden lg:flex lg:justify-end">
-          <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer"
-            class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </nav>
-    </header>
+
+<body class="font-sans antialiased text-[#d9d9d9] overflow-hidden">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex items-center justify-between w-full lg:w-auto">
+        <a href="#" class="logo">
+          <img src="/images/logo.png" alt="IATech Logo" />
+        </a>
+        <nav role="navigation" class="lg:hidden">
+          <div id="menuToggle">
+            <input type="checkbox" id="menuCheckbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/about.html">About Us</a></li>
+              <li><a href="/html/members.html">Members</a></li>
+              <li><a href="/html/achievements.html">Achievements</a></li>
+              <li><a href="/html/projects.html">Projects</a></li>
+              <li><a href="https://github.com/Jossey28/IATech/pulls" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+      </div>
+      <!-- Desktop navigation -->
+      <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
+        <a href="/index.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
+        <a href="/html/about.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
+        <a href="/html/members.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
+        <a href="/html/achievements.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
+        <a href="/html/projects.html" class="text-sm font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
+      </div>
+      <!-- GitHub Link -->
+      <div class="hidden lg:flex lg:justify-end">
+        <a href="https://github.com/Jossey28/IATech/pulls" target="_blank" rel="noopener noreferrer"
+          class="text-sm font-semibold leading-6 text-[#d9d9d9]">Open a PR <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+  </header>
   </div>
 </body>
 <div class="absolute inset-0 flex items-center justify-center">
   <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
     <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-      <div class="inline-flex items-center justify-between rounded-full px-6 py-2 text-lg leading-7 text-[#d9d9d9] ring-2 ring-[#d9d9d9]/20 bg-[#2e2e2e] animated-border whitespace-nowrap">
+      <div
+        class="inline-flex items-center justify-between rounded-full px-6 py-2 text-lg leading-7 text-[#d9d9d9] ring-2 ring-[#d9d9d9]/20 bg-[#2e2e2e] animated-border whitespace-nowrap">
         We just won the Iowa State University Cyber Defense Competition!
-        <a href="https://iscore.iseage.org/" target="_blank" rel="noopener noreferrer" class="ml-2 font-semibold text-indigo-600">
+        <a href="https://iscore.iseage.org/" target="_blank" rel="noopener noreferrer"
+          class="ml-2 font-semibold text-indigo-600">
           Read more <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
-    </div>          <div class="text-center">
-            <h1 class="text-4xl font-[300] tracking-tight text-white sm:text-6xl">
-              Empowering Students in
-                <span class="text-[#ADD8E6] underline underline-offset-4 font-[900]">Cybersecurity</span>
-                and <span class="text-[#ADD8E6] underline underline-offset-4 font-[900]">Tech</span>.
-            </h1>
-            <p class="mt-6 text-lg leading-8 text-[#d9d9d9]">
-              Prepare, compete, and excel in cyber, as well as other technical
-              challenges while expanding your expertise across the ever-evolving
-              tech landscape.
-            </p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
-              <a href="/html/about.html" class="text-sm font-[800] leading-6 text-[#d9d9d9]">Learn more <span
-                  aria-hidden="true">→</span></a>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="text-center">
+      <h1 class="text-4xl font-[300] tracking-tight text-white sm:text-6xl">
+        Empowering Students in
+        <span class="text-[#ADD8E6] underline underline-offset-4 font-[900]">Cybersecurity</span>
+        and <span class="text-[#ADD8E6] underline underline-offset-4 font-[900]">Tech</span>.
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-[#d9d9d9]">
+        Prepare, compete, and excel in cyber, as well as other technical
+        challenges while expanding your expertise across the ever-evolving
+        tech landscape.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="/html/about.html" class="text-sm font-[800] leading-6 text-[#d9d9d9]">Learn more <span
+            aria-hidden="true">→</span></a>
       </div>
     </div>
-    <footer class="fixed inset-x-0 bottom-0 z-50">
-      <nav class="flex items-center justify-center p-6" aria-label="Global">
-          <div class="flex gap-x-12">
-              <a href="https://www.instagram.com/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                  <i class="fa-brands fa-instagram"></i>
-              </a> <!-- Instagram -->
-              <a href="https://www.linkedin.com/company/iateched/" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                  <i class="fa-brands fa-linkedin-in"></i>
-              </a> <!-- LinkedIn -->
-              <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
-                  <i class="fa-brands fa-github"></i>
-              </a> <!-- Github -->
-          </div>
-      </nav>
-  </footer>  
-  </div>  
+  </div>
+</div>
+</div>
+<footer class="fixed inset-x-0 bottom-0 z-50">
+  <nav class="flex items-center justify-center p-6" aria-label="Global">
+    <div class="flex gap-x-12">
+      <a href="https://www.instagram.com/iateched/" target="_blank"
+        class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+        <i class="fa-brands fa-instagram"></i>
+      </a> <!-- Instagram -->
+      <a href="https://www.linkedin.com/company/iateched/" target="_blank"
+        class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a> <!-- LinkedIn -->
+      <a href="https://github.com/IATechEd" target="_blank" class="text-lg font-semibold leading-6 text-[#d9d9d9]">
+        <i class="fa-brands fa-github"></i>
+      </a> <!-- Github -->
+    </div>
+  </nav>
+</footer>
+</div>
 </body>
 
 </html>
