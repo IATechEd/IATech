@@ -1,54 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Viewer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f9;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Profile Viewer</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
 
-    #profile-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-  </style>
+        #profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Members (WIP)</h1>
-  <div id="profile-container"></div>
+    <h1>Members (WIP)</h1>
+    <div id="profile-container"></div>
 
-  <script>
-    // Load the JSON data
-    fetch('JSON/profile.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('profile-container');
+    <script>
+        // Load the JSON data
+        fetch('JSON/profile.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('profile-container');
 
-        // Loop through each member and display their profile
-        data.forEach(member => {
-          const profileCard = document.createElement('div');
-          profileCard.classList.add('profile-card');
+                // Loop through each member and display their profile
+                data.forEach(member => {
+                    const profileCard = document.createElement('div');
+                    profileCard.classList.add('profile-card');
 
-          profileCard.innerHTML = `
+                    profileCard.innerHTML = `
             <div style="width:1160px;height:720px;background-color:#000000;border-radius:24px;position:relative;overflow:hidden;box-shadow:0 4px 40px 0 #000000;margin:0 auto"
         class="main-container">
         <div style="width:1043px;height:650px;position:relative;z-index:67;margin:22px 0 0 53px">
             <div
-                style="width:100px;height:100px;background-position:center;background-image:url(images/Jef.png);background-size:100% 100%;background-repeat:no-repeat;position:absolute;top:0;left:177px;z-index:66">
+                style="width:100px;height:100px;background-position:center;background-image:url(${member.subicon});background-size:100% 100%;background-repeat:no-repeat;position:absolute;top:0;left:177px;z-index:66">
             </div>
-            <div
-                style="width:250px;height:250px;background-position:center;position:absolute;top:27px;left:0;z-index:60">
-                <div
-                    style="width:234px;height:234px;background-position:center;background-image:url(${member.image});background-size:100% 100%;background-repeat:no-repeat;position:relative;z-index:61;margin:8px 0 0 8px;border-image: url(images/Border.png) 0 fill stretch;">
-                </div>
-            </div>
+            <div style="width:250px; height:250px; position:relative;">
+    <!-- SVG for Border -->
+    <svg
+        width="250"
+        height="250"
+        viewBox="0 0 250 250"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="position:absolute; top:0; left:0; z-index:2;"
+    >
+        <!-- The border -->
+        <path
+            d="M125 4C100.821 4 81.1188 5.29033 65.2035 8.82737C49.2428 12.3745 36.8469 18.2342 27.5405 27.5405C18.2342 36.8469 12.3745 49.2428 8.82737 65.2035C5.29033 81.1188 4 100.821 4 125C4 149.179 5.29033 168.881 8.82737 184.796C12.3745 200.757 18.2342 213.153 27.5405 222.459C36.8469 231.766 49.2428 237.625 65.2035 241.173C81.1188 244.71 100.821 246 125 246C149.179 246 168.881 244.71 184.796 241.173C200.757 237.625 213.153 231.766 222.459 222.459C231.766 213.153 237.625 200.757 241.173 184.796C244.71 168.881 246 149.179 246 125C246 100.821 244.71 81.1188 241.173 65.2035C237.625 49.2428 231.766 36.8469 222.459 27.5405C213.153 18.2342 200.757 12.3745 184.796 8.82737C168.881 5.29033 149.179 4 125 4Z"
+            stroke="black"
+            stroke-width="8"
+        />
+    </svg>
+
+    <!-- Image clipped inside the border -->
+    <svg
+        width="250"
+        height="250"
+        viewBox="0 0 250 250"
+        xmlns="http://www.w3.org/2000/svg"
+        style="position:absolute; top:0; left:0; z-index:1; overflow:hidden;"
+    >
+        <defs>
+            <clipPath id="border-clip">
+                <path
+                    d="M125 4C100.821 4 81.1188 5.29033 65.2035 8.82737C49.2428 12.3745 36.8469 18.2342 27.5405 27.5405C18.2342 36.8469 12.3745 49.2428 8.82737 65.2035C5.29033 81.1188 4 100.821 4 125C4 149.179 5.29033 168.881 8.82737 184.796C12.3745 200.757 18.2342 213.153 27.5405 222.459C36.8469 231.766 49.2428 237.625 65.2035 241.173C81.1188 244.71 100.821 246 125 246C149.179 246 168.881 244.71 184.796 241.173C200.757 237.625 213.153 231.766 222.459 222.459C231.766 213.153 237.625 200.757 241.173 184.796C244.71 168.881 246 149.179 246 125C246 100.821 244.71 81.1188 241.173 65.2035C237.625 49.2428 231.766 36.8469 222.459 27.5405C213.153 18.2342 200.757 12.3745 184.796 8.82737C168.881 5.29033 149.179 4 125 4Z"
+                />
+            </clipPath>
+        </defs>
+        <image
+            href="${member.image}"
+            width="250"
+            height="250"
+            preserveAspectRatio="xMidYMid slice"
+            clip-path="url(#border-clip)"
+        />
+    </svg>
+</div>
             <span
                 style="display:flex;height:56px;justify-content:flex-start;align-items:center;font-family:Raleway, var(--default-font-family);font-size:56px;font-weight:700;line-height:56px;color:#ffffff;letter-spacing:-1.12px;position:absolute;top:calc(50% - 163px);left:276px;text-align:left;white-space:nowrap;z-index:67">${member.name}</span>
             <div
@@ -56,21 +98,21 @@
                 <div
                     style="display:flex;width:228px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:15">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:16">${member.team}
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:16">${member.team}
                         member since</span><span
                         style="min-width:0;height:21px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:17">${member.member_since}</span>
                 </div>
                 <div
                     style="display:flex;width:228px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:21">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:22">Favorite
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:22">Favorite
                         ${member.topic}</span><span
                         style="min-width:0;height:21px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:23">${member.favorite_thing}</span>
                 </div>
                 <div
                     style="display:flex;width:228px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:24">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:25">Main
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:25">Main
                         tasks in team / project</span><span
                         style="display:flex;width:228px;min-width:0;height:63px;justify-content:flex-start;align-items:flex-start;align-self:stretch;flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;z-index:26">${member.main_tasks}</span>
                 </div>
@@ -80,33 +122,33 @@
                 <div
                     style="display:flex;width:154px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:8">
                     <span
-                        style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:9">I
+                        style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:9">I
                         want to be good at</span><span
                         style="height:21px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:10">${member.aspired_skill}</span>
                 </div>
                 <div
                     style="display:flex;width:227px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:11">
                     <span
-                        style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:12">Favorite
+                        style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:12">Favorite
                         thing to do at school</span><span
                         style="height:21px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:13">${member.favorite_thing_at_school}</span>
                 </div>
             </div>
             <div
-                style="display:flex;width:228px;height:382px;flex-direction:column;gap:24px;align-items:flex-start;flex-wrap:nowrap;position:absolute;top:266px;left:815px;overflow:hidden">
+                style="display:flex;width:228px;flex-direction:column;gap:24px;align-items:flex-start;flex-wrap:nowrap;position:absolute;top:266px;left:815px;overflow:hidden">
                 <div
                     style="display:flex;width:228px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:1">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:2">Background
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:2">Background
                         / experience</span><span
-                        style="display:flex;width:228px;min-width:0;height:171px;justify-content:flex-start;align-items:flex-start;align-self:stretch;flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;z-index:3"><span>${member.background_experience.map(item => `${item}<br />`).join('')}</span>
+                        style="display:flex;width:228px;min-width:0;justify-content:flex-start;align-items:flex-start;align-self:stretch;flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;z-index:3"><span>${member.background_experience.map(item => `${item}<br />`).join('')}</span>
                 </div>
                 <div
                     style="display:flex;width:228px;padding:1px 0 1px 0;flex-direction:column;gap:9px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:4">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:5">Outside
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:5">Outside
                         of work</span><span
-                        style="display:flex;width:228px;min-width:0;height:50px;justify-content:flex-start;align-items:flex-start;align-self:stretch;flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;overflow:hidden;text-overflow:initial;z-index:6"><span>${member.outside_of_work.map(item => `${item}<br />`).join('')}</span>
+                        style="display:flex;width:228px;min-width:0;justify-content:flex-start;align-items:flex-start;align-self:stretch;flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:500;line-height:20.8px;color:#ffffff;position:relative;text-align:left;overflow:hidden;text-overflow:initial;z-index:6"><span>${member.outside_of_work.map(item => `${item}<br />`).join('')}</span>
                 </div>
             </div>
             <div
@@ -123,7 +165,7 @@
                     <div
                         style="display:flex;min-width:0;padding:1px 0 0 0;flex-direction:column;gap:5px;align-items:flex-start;flex-grow:1;flex-shrink:0;flex-basis:0;flex-wrap:nowrap;position:relative;z-index:32">
                         <span
-                            style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:33">Team</span><span
+                            style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:33">Team</span><span
                             style="height:39px;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:32px;font-weight:400;line-height:38.727px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:34">IATechED</span>
                     </div>
                 </div>
@@ -132,52 +174,52 @@
                     <div
                         style="display:flex;min-width:0;padding:1px 0 0 0;flex-direction:column;gap:5px;align-items:flex-start;flex-grow:1;flex-shrink:0;flex-basis:0;flex-wrap:nowrap;position:relative;z-index:36">
                         <span
-                            style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:37">Role
+                            style="height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:37">Role
                             in the team</span><span
-                            style="height:39px;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:32px;font-weight:400;line-height:38.727px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:38">Designer</span>
+                            style="height:39px;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:32px;font-weight:400;line-height:38.727px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:38">${member.role}</span>
                     </div>
                 </div>
                 <div
                     style="display:flex;width:228px;padding:1px 0 2px 0;flex-direction:column;gap:13px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:39">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:40">School</span><span
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:40">School</span><span
                         style="min-width:0;height:29px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:24px;font-weight:400;line-height:29px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:41">Central
                         Campus</span>
                 </div>
                 <div
                     style="display:flex;width:228px;padding:1px 0 2px 0;flex-direction:column;gap:13px;align-items:flex-start;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:42">
                     <span
-                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:#00640b;position:relative;text-align:left;white-space:nowrap;z-index:43">Location</span><span
+                        style="min-width:0;height:19px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:16px;font-weight:700;line-height:19px;color:${member.color};position:relative;text-align:left;white-space:nowrap;z-index:43">Location</span><span
                         style="min-width:0;height:29px;align-self:stretch;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:24px;font-weight:400;line-height:29px;color:#ffffff;position:relative;text-align:left;white-space:nowrap;z-index:44">Des
                         Moines</span>
                 </div>
             </div>
         </div>
         <div
-            style="display:flex;width:456px;gap:24px;justify-content:center;align-items:center;flex-wrap:nowrap;position:relative;overflow:hidden;z-index:46;margin:1px 0 0 640px">
+            style="display:flex;width:calc(100% - 40px);justify-content:flex-end;align-items:center;position:relative;overflow:hidden;z-index:46;margin:1px 10px 0 10px;gap:20px;padding-left:10px;padding-right:10px">
             <div
-                style="display:flex;width:84px;gap:4px;align-items:center;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:47">
-                <div
-                    style="width:24px;height:24px;flex-shrink:0;background-position:center;background-image:url(images/website.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:48">
-                </div>
-                <span
-                    style="height:18px;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:10px;font-weight:400;line-height:18px;color:#cecece;position:relative;text-align:left;white-space:nowrap;z-index:49">${member.website}</span>
+            style="display:flex;gap:4px;align-items:center;flex-shrink:0;position:relative;z-index:47">
+            <div
+            style="width:24px;height:24px;flex-shrink:0;background-position:center;background-image:url(images/website.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:48">
+            </div>
+            <span
+            style="flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:10px;font-weight:400;line-height:18px;color:#cecece;position:relative;text-align:left;white-space:nowrap;z-index:49">${member.website}</span>
             </div>
             <div
-                style="display:flex;width:155px;gap:4px;align-items:center;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:50">
-                <div
-                    style="width:20px;height:20px;flex-shrink:0;background-position:center;background-image:url(images/LinkedIn.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:51">
-                </div>
-                <span
-                    style="flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:11px;font-weight:400;color:#cecece;position:relative;text-align:left;z-index:52">${member.linkedin}</span>
+            style="display:flex;gap:4px;align-items:center;flex-shrink:0;position:relative;z-index:50">
+            <div
+            style="width:20px;height:20px;flex-shrink:0;background-position:center;background-image:url(images/LinkedIn.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:51">
+            </div>
+            <span
+            style="flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:11px;font-weight:400;color:#cecece;position:relative;text-align:left;z-index:52">${member.linkedin}</span>
             </div>
             <div
-                style="display:flex;width:169px;gap:4px;align-items:center;flex-shrink:0;flex-wrap:nowrap;position:relative;z-index:53">
-                <div
-                    style="width:24px;height:24px;flex-shrink:0;background-position:center;background-image:url(images/GitHub.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:54">
-                </div>
-                <span
-                    style="height:18px;flex-shrink:0;flex-basis:auto;font-family:Raleway, var(--default-font-family);font-size:11px;font-weight:400;line-height:18px;color:#cecece;position:relative;text-align:left;white-space:nowrap;z-index:55">${member.github}</span>
+            style="display:flex;gap:4px;align-items:center;flex-shrink:0;position:relative;z-index:53">
+            <div
+            style="width:24px;height:24px;flex-shrink:0;background-position:center;background-image:url(images/GitHub.png);background-size:cover;background-repeat:no-repeat;position:relative;z-index:54">
+            </div>
+            <span
+            style="flex-shrink:0;font-family:Raleway, var(--default-font-family);font-size:11px;font-weight:400;line-height:18px;color:#cecece;position:relative;text-align:left;white-space:nowrap;z-index:55">${member.github}</span>
             </div>
         </div>
         <div
@@ -186,15 +228,16 @@
         <div
             style="width:1160px;height:50px;background-position:center;background-image:url(images/Bottom\ fadeout.png);background-size:cover;background-repeat:no-repeat;position:absolute;top:670px;left:0;z-index:45">
         </div>
-    </div>
+        </div>
           `;
 
-          container.appendChild(profileCard);
-        });
-      })
-      .catch(error => {
-        console.error('Error loading JSON data:', error);
-      });
-  </script>
+                    container.appendChild(profileCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading JSON data:', error);
+            });
+    </script>
 </body>
+
 </html>

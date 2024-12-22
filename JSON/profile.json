@@ -3,9 +3,11 @@
         "name": "Jefrey Allen",
         "banner": "/images/jefreyallenbanner.png",
         "image": "/images/profiles/jefrey_allen.jpg",
-        "team"  : "IATechED",
+        "color": "#00640b",
+        "subicon": "/images/k4.svg",
+        "team": "IATechED",
         "team_icon": "/images/TeamIATechED.png",
-        "role"  : "Designer",
+        "role": "Designer",
         "school": "Central Campus",
         "location": "Des Moines",
         "member_since": "August 2024",
@@ -30,38 +32,39 @@
     },
     {
         "name": "Alex Cantor",
+        "color": "#699cfc",
+        "subicon": "/images/synagoguecentral.svg",
+        "banner": "/images/alex_cantor_banner.png",
         "image": "/images/profiles/alex_cantor.jpg",
-        "team"  : "IATechED",
-        "team_icon": "/images/iateched_logo.png",
-        "role"  : "Developer",
-        "school": "Central Campus",
-        "location": "Des Moines",
-        "member_since": "August 2023",
-        "favorite_thing": "Building websites",
-        "main_tasks": "Develop the website, research hardening on Windows",
-        "aspired_skill": "Prototyping",
+        "team": "IATechED",
+        "team_icon": "/images/TeamIATechED.png",
+        "role": "Programmer",
+        "school": "Johnston High School",
+        "location": "Johnston",
+        "member_since": "August 2024",
+        "favorite_thing": "Learning",
+        "main_tasks": "Research Linux vulnerabilities; Develop our website; Manage our social media",
         "favorite_thing_at_school": "Cybersecurity",
         "topic": "Hobby",
+        "aspired_skill": "Penetration Testing",
         "background_experience": [
-            "HTML, CSS, JS, TS, React",
-            "Sec+, A+, Net+ certifications",
-            "10+ State Wins in CyberPatriot",
-            "Former Incident Response & IT Engineer @ Casey's Store Support Center"
+            "Linux+, FrontendExpert, ProgrammingExpert certifications"
         ],
         "outside_of_work": [
-            "Game Developer",
-            "Tennis Player for 5 years"
+            "Full Stack Web Developer (Laravel)",
+            "Hockey Player"
         ],
-        "website": "iateched.org",
-        "linkedin": "linkedin.com/in/amcantor",
-        "github": "github.com/alex-cantor"
+        "website": "synagoguecentral.com",
+        "linkedin": "https://www.linkedin.com/in/amcantor/",
+        "github": "https://github.com/alex-cantor/"
     },
     {
         "name": "Irene Alobo",
+        "color": "#00640b",
         "image": "/images/profiles/irene_alobo.jpg",
-        "team"  : "IATechED",
-        "team_icon": "/images/iateched_logo.png",
-        "role"  : "Developer",
+        "team": "IATechED",
+        "team_icon": "/images/TeamIATechED.png",
+        "role": "Developer",
         "school": "Central Campus",
         "location": "Des Moines",
         "member_since": "August 2022",
@@ -85,4 +88,3 @@
         "github": "github.com/Jossey28"
     }
 ]
-  
