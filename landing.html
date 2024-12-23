@@ -1,0 +1,210 @@
+
+<style>
+    :root {
+      --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    }
+
+    html,body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .hero-container {
+        background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 100vh; /* Fill the entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .header {
+      display: flex;
+      width: 1274px;
+      gap: 268px;
+      align-items: center;
+      position: relative;
+      z-index: 8;
+      margin: 9.5px 0 0 73px;
+    }
+    
+    .logo-container {
+      width: 150px;
+      height: 45px;
+      position: relative;
+    }
+    
+    .logo-text {
+      position: absolute;
+      top: 9px;
+      left: 30.5px;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16.1px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #303236;
+      white-space: nowrap;
+    }
+    
+    .logo-image {
+      width: 150px;
+      height: 48px;
+      background: url() center/cover no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .nav-menu {
+      display: flex;
+      padding: 12px;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-item {
+      font-family: Raleway, var(--default-font-family);
+      font-size: 13.8px;
+      font-weight: 500;
+      line-height: 21px;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    
+    .cta-button {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
+    .cta-icon {
+      width: 16px;
+      height: 16px;
+      background: url() center/cover no-repeat;
+    }
+    
+    .cta-text {
+      font-family: Inter, var(--default-font-family);
+      font-size: 13.8px;
+      font-weight: 400;
+      line-height: 14px;
+      color: #ffffff;
+    }
+    
+    .hero-content {
+      margin: 129px 0 0 105px;
+    }
+    
+    .hero-title {
+      width: 542px;
+      font-family: Raleway, var(--default-font-family);
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 75.6px;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffffff, #d5d8f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-title strong {
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    
+    .hero-description {
+      width: 580px;
+      font-family: Inter, var(--default-font-family);
+      font-size: 17.9px;
+      font-weight: 400;
+      line-height: 24.75px;
+      color: #e5e5e7;
+      letter-spacing: -0.72px;
+      margin-top: 20px;
+    }
+    
+    .hero-image {
+      width: 1024px;
+      height: 569px;
+      background: url() center/contain no-repeat;
+      border-radius: 10px 10px 0 0;
+      margin: 1176 0 0 473;
+      position: absolute;
+      z-index: 3;
+    }
+    
+    .background-overlay {
+        width: 1920px;
+        height: 1438px;
+        background: none;
+        position: absolute;
+        top: 0;
+        left: -247.5px;
+        z-index: 2;
+        }
+
+        .background-overlay video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="hero-container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-image" role="img" aria-label="IATechED Logo"></div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">About Us</a>
+                <a href="#" class="nav-item">Members</a>
+                <a href="#" class="nav-item">Achievements</a>
+                <a href="#" class="nav-item">Projects</a>
+            </nav>
+            <a href="#" class="cta-button" role="button">
+                <div class="cta-icon" aria-hidden="true"></div>
+                <span class="cta-text">Open a PR</span>
+            </a>
+        </header>
+        
+        <main class="hero-content">
+            <h1 class="hero-title">
+                Empowering Students in<br />
+                <strong>Cybersecurity</strong> and <strong>Tech</strong>
+            </h1>
+            <p class="hero-description">
+                Prepare, compete, and excel in cyber, as well as other technical
+                challenges while expanding your expertise across the
+                ever-evolving tech landscape.
+            </p>
+        </main>
+        
+        <div class="hero-image" role="img" aria-label="Cybersecurity and tech illustration"></div>
+        <div class="background-overlay" aria-hidden="true">
+            <video autoplay muted loop>
+                <source src="https://huly.io/videos/pages/home/hero/hero.webm?updated=20240607144404" type="video/webm">
+            </video>
+        </div>
+    </section>
+    
