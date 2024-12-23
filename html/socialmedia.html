@@ -28,35 +28,67 @@
     }
   </script>
   <script>
-    async function loadProjects() {
-      try {
-        const response = await fetch('/JSON/projects.json');
-        const projects = await response.json();
+    // <script>
+    //   // Helper function to create a post element
+    //   function createPostElement(post) {
+    //     const postDiv = document.createElement("div");
+    //     postDiv.className = "bg-[#1e1e1e] p-4 rounded-lg shadow-lg";
+    //     postDiv.innerHTML = `
+    //       <img src="${post.image}" alt="${post.caption}" class="w-full h-40 object-cover rounded-md mb-2">
+    //       <p class="text-sm font-medium text-[#d9d9d9]">${post.caption}</p>
+    //       <a href="${post.link}" target="_blank" class="text-blue-500 text-xs mt-2 inline-block">View Post</a>
+    //     `;
+    //     return postDiv;
+    //   }
 
-        const projectsGrid = document.getElementById('projects-grid');
+    //   // Function to fetch Instagram posts
+    //   async function fetchInstagramPosts() {
+    //     try {
+    //       const response = await fetch('YOUR_INSTAGRAM_API_ENDPOINT');
+    //       const data = await response.json();
+    //       const posts = data.data; // Adjust based on API response structure
+    //       const grid = document.getElementById("projects-grid");
 
-        projects.forEach(project => {
-          const projectCard = document.createElement('a');
-          projectCard.href = project.link;
-          projectCard.target = '_blank';
-          projectCard.rel = 'noopener noreferrer';
-          projectCard.className = 'shadow-2xl rounded-lg overflow-hidden';
-          projectCard.innerHTML = `
-                <div class="p-4">
-                  <h4 class="text-xl font-bold">${project.title}</h4>
-                  <p class="text-[#d9d9d9]">By: ${project.authors}</p>
-                  <p class="mt-2 text-[#d9d9d9]">${project.description}</p>
-                </div>
-              `;
-          projectsGrid.appendChild(projectCard);
-        });
-      } catch (error) {
-        console.error('Error loading projects:', error);
-      }
-    }
+    //       posts.forEach(post => {
+    //         const postElement = createPostElement({
+    //           image: post.media_url,
+    //           caption: post.caption || "No caption",
+    //           link: post.permalink,
+    //         });
+    //         grid.appendChild(postElement);
+    //       });
+    //     } catch (error) {
+    //       console.error("Error fetching Instagram posts:", error);
+    //     }
+    //   }
 
-    document.addEventListener('DOMContentLoaded', loadProjects);
-  </script>
+    //   // Function to fetch LinkedIn posts
+    //   async function fetchLinkedInPosts() {
+    //     try {
+    //       const response = await fetch('YOUR_LINKEDIN_API_ENDPOINT');
+    //       const data = await response.json();
+    //       const posts = data.elements; // Adjust based on API response structure
+    //       const grid = document.getElementById("projects-grid");
+
+    //       posts.forEach(post => {
+    //         const postElement = createPostElement({
+    //           image: "https://via.placeholder.com/150", // Replace with actual media URL if available
+    //           caption: post.text?.text || "No caption",
+    //           link: `https://www.linkedin.com/feed/update/${post.entityUrn.split(':').pop()}`,
+    //         });
+    //         grid.appendChild(postElement);
+    //       });
+    //     } catch (error) {
+    //       console.error("Error fetching LinkedIn posts:", error);
+    //     }
+    //   }
+
+    //   // Fetch posts on page load
+    //   document.addEventListener("DOMContentLoaded", () => {
+    //     fetchInstagramPosts();
+    //     fetchLinkedInPosts();
+    //   });
+    // </script>
 
   <style>
     .bg-gold {
@@ -334,9 +366,14 @@
         <div class="hidden lg:flex lg:gap-x-12 lg:justify-center items-center">
           <a href="/index.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Home</a>
           <a href="/html/about.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">About Us</a>
-          <a href="/html/socialmedia.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Social Media</a>          <a href="/html/members.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
-          <a href="/html/achievements.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
-          <a href="/html/projects.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
+          <a href="/html/socialmedia.html" class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Social
+            Media</a>
+          <a href="/html/members.html"
+            class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Members</a>
+          <a href="/html/achievements.html"
+            class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Achievements</a>
+          <a href="/html/projects.html"
+            class="text-sm lg:text-xl font-bold leading-6 text-[#d9d9d9] nav-link">Projects</a>
         </div>
         <!-- GitHub Link -->
         <div class="hidden lg:flex lg:justify-end">
@@ -351,14 +388,19 @@
   <section id="projects" class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
     <ul role="list" class="divide-y divide-[#d9d9d9] mx-auto max-w-2xl lg:max-w-4xl">
       <div class="px-4 sm:px-0 text-center">
-        <h3 class="text-3xl font-extrabold leading-9 text-[#d9d9d9] sm:text-4xl sm:leading-10">Projects</h3>
-        <p class="mt-1 max-w-2xl text-sm leading-6 text-[#d9d9d9] mx-auto">Our members have accomplished incredible
-          projects! Here are some of their favorites that they have worked on.</p>
+        <h3 class="text-3xl font-extrabold leading-9 text-[#d9d9d9] sm:text-4xl sm:leading-10">Social Media</h3>
+        <p class="mt-1 max-w-2xl text-sm leading-6 text-[#d9d9d9] mx-auto">Here is all of our recent and most popular
+          social media posts!</p>
       </div>
 
-      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4"></div>
-    </ul>
-  </section>
+      <div id="projects-grid" class="grid grid-cols-1 gap-6 p-4">
+        <blockquote class="instagram-media w-full"
+          data-instgrm-permalink="https://www.instagram.com/reel/DDyJ6tgsU3L/?utm_source=ig_embed&amp;utm_campaign=loading"
+          data-instgrm-version="14"></blockquote>
+      </div>
+      <script async src="//www.instagram.com/embed.js"></script>
+        </ul>
+      </section>
 
   <footer class="fixed inset-x-0 bottom-0 z-50 bg-[#121212]">
     <nav class="flex items-center justify-center p-6" aria-label="Global">
