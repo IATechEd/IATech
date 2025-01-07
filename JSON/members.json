@@ -46,5 +46,41 @@
         "image": "/images/profiles/johnlee_vy.jpg",
         "linkedin": "https://www.linkedin.com/in/johnlee-vy-066350338",
         "github": "https://github.com/JohnleeVy"
+    },
+    {
+        "name": "Bryan, neri",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/tmp_ca80818c-9b25-40f9-852c-09efa72610ef_Bryan%20Neri-Doroteo.jpeg",
+        "linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        "github": "Default one"
+    },
+    {
+        "name": "Jacob Padilla",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_1278_Jacob%20Padilla.jpeg",
+        "linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+        "github": "https://github.com/Billy-bob-0"
+    },
+    {
+        "name": "Christian ND",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/tmp_e3619ae5-c046-4da4-b36e-22591f271d11_Christian%20Neri-Dorot.jpeg",
+        "linkedin": "..",
+        "github": ".."
+    },
+    {
+        "name": "Dylanie Polson",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/FD47EECE-6AD1-4B7D-9833-DC38236A9675_Dylanie%20Polson.jpeg",
+        "linkedin": "https://www.linkedin.com/in/dylanie-p-675555345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        "github": "https://github.com/dylanierose"
+    },
+    {
+        "name": "Amen Negash",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_5058_Amen%20Negash.jpeg",
+        "linkedin": "www.linkedin.com/in/amen-negash-702441278",
+        "github": "https://github.com/AmenNegash"
+    },
+    {
+        "name": "Johnlee Vy",
+        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/Screenshot_2025-01-06-14-48-16-27_254de13a4bc_Johnlee%20Vy.jpg",
+        "linkedin": "https://www.linkedin.com/in/johnlee-vy-066350338",
+        "github": "https://github.com/JohnleeVy"
     }
 ]
