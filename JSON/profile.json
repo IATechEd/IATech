@@ -253,5 +253,29 @@
         "banner": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question%201/54140001243_5fca7eefc8_k_Johnlee%20Vy.jpg",
         "subicon": "",
         "team_icon": ""
+    },
+     {
+        "name": "Finian Huggins",
+        "color": "#699cfc",
+        "banner": "/images/logo.png",
+        "image": "/images/profiles/finian_huggins.jpg",
+        "team": "IATechED",
+        "team_icon": "/images/TeamIATechED.png",
+        "role": "Network Manager",
+        "school": "Des Moines Central Campus",
+        "location": "Des Moines",
+        "member_since": "August 2022",
+        "favorite_thing": "Learning",
+        "main_tasks": "Study for furture competitions and manage the class network",
+        "favorite_thing_at_school": "Cybersecurity",
+        "aspired_skill": "Penetration Testing",
+        "background_experience": [
+            "Linux, opnsense, pfsense"
+        ],
+        "outside_of_work": [
+            "Photographer",
+            "Runner"
+        ],
+        "linkedin": "https://www.linkedin.com/in/finianhuggins/"
     }
 ]
