@@ -1,5 +1,10 @@
 [
     {
+        "competition": "2025 LooCon CTF Competition",
+        "position": "1st",
+        "colorClass": "bg-gold"
+    },
+    {
         "competition": "2024 CornCon High School CTF Competition",
         "position": "1st",
         "colorClass": "bg-gold"
