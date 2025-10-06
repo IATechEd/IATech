@@ -15,6 +15,16 @@
         "colorClass": "bg-gold"
     },
     {
+        "competition": "CYBER.ORG's National Cyber Cup",
+        "position": "2nd",
+        "colorClass": "bg-slate-500"
+    },
+    {
+        "competition": "BSidesDSM 2025 CTF Competition",
+        "position": "3rd",
+        "colorClass": "bg-yellow-800"
+    },
+    {
         "competition": "2024 National Cyber League (CyberSkyline) Team Competition",
         "position": "Top 2%",
         "colorClass": "bg-gold"
@@ -35,3 +45,4 @@
         "colorClass": "bg-gold"
     }
 ]
+
