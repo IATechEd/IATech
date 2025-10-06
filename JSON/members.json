@@ -12,6 +12,17 @@
         "github": "https://github.com/alex-cantor"
     },
     {
+        "name": "Irene Alobo",
+        "image": "/images/profiles/irene_alobo.jpg",
+        "linkedin": "https://www.linkedin.com/in/irene-alobo",
+        "github": "https://github.com/Jossey28"
+    },
+    {
+        "name": "Lincoln Kessel",
+        "image": "/images/profiles/lincoln_kessel.jpg",
+        "linkedin": "https://www.linkedin.com/in/lincoln-kessel-663677361/"
+    },
+    {
         "name": "Jefrey (Jef) Allen",
         "image": "/images/profiles/jefrey_allen.jpg",
         "linkedin": "https://www.linkedin.com/in/jefreyallen",
@@ -22,12 +33,6 @@
         "image": "/images/profiles/finian_huggins.jpg",
         "linkedin": "https://www.linkedin.com/in/finianhuggins",
         "github": "https://www.github.com/Hugg22"
-    },
-    {
-        "name": "Irene Alobo",
-        "image": "/images/profiles/irene_alobo.jpg",
-        "linkedin": "https://www.linkedin.com/in/irene-alobo",
-        "github": "https://github.com/Jossey28"
     },
     {
         "name": "Cooper Sanders",
