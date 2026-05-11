@@ -134,11 +134,6 @@ nav {
     /* Space items apart */
 }
 
-.logo {
-    margin-right: auto;
-    /* Push logo to the right */
-}
-
 #menu li {
     padding: 10px 0;
     font-size: 22px;
@@ -150,10 +145,6 @@ nav {
 
 #menuToggle input:checked~ul {
     transform: none;
-}
-
-.logo img {
-    height: 64px;
 }
 
 .animated-border {
@@ -234,9 +225,5 @@ nav {
 
     #menuToggle {
         display: none;
-    }
-
-    .logo {
-        position: relative;
     }
 }
