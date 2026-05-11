@@ -1,91 +1,91 @@
 [
-    {
-        "name": "Mr. (Mike) Tierney",
-        "image": "/static/images/profiles/michael_tierney.jpg",
-        "linkedin": "https://www.linkedin.com/in/mike-tierney-63665175",
-        "github": "https://github.com/example1"
-    },
-    {
-        "name": "Alex Cantor",
-        "image": "/static/images/profiles/alex_cantor.jpg",
-        "linkedin": "https://www.linkedin.com/in/amcantor",
-        "github": "https://github.com/alex-cantor"
-    },
-    {
-        "name": "Irene Alobo",
-        "image": "/static/images/profiles/irene_alobo.jpg",
-        "linkedin": "https://www.linkedin.com/in/irene-alobo",
-        "github": "https://github.com/Jossey28"
-    },
-    {
-        "name": "Lincoln Kessel",
-        "image": "/static/images/profiles/lincoln_kessel.jpg",
-        "linkedin": "https://www.linkedin.com/in/lincoln-kessel-663677361/"
-    },
-    {
-        "name": "Jefrey (Jef) Allen",
-        "image": "/static/images/profiles/jefrey_allen.jpg",
-        "linkedin": "https://www.linkedin.com/in/jefreyallen",
-        "github": "https://www.github.com/invasivelycoding"
-    },
-    {
-        "name": "Finian (Finn) Huggins",
-        "image": "/static/images/profiles/finian_huggins.jpg",
-        "linkedin": "https://www.linkedin.com/in/finianhuggins",
-        "github": "https://www.github.com/Hugg22"
-    },
-    {
-        "name": "Cooper Sanders",
-        "image": "/static/images/profiles/cooper_sanders.jpg",
-        "linkedin": "https://www.linkedin.com/in/cooper-sanders",
-        "github": "https://github.com/meyyh"
-    },
-    {
-        "name": "Michael Flecha",
-        "image": "/static/images/profiles/michael_flecha.jpg",
-        "linkedin": "https://www.linkedin.com/in/michael-flecha",
-        "github": "https://github.com/s0up9"
-    },
-    {
-        "name": "Johnlee Vy",
-        "image": "/static/images/profiles/johnlee_vy.jpg",
-        "linkedin": "https://www.linkedin.com/in/johnlee-vy-066350338",
-        "github": "https://github.com/JohnleeVy"
-    },
-    {
-        "name": "Bryan Neri-Doroteo",
-        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/Bryan.jpg",
-        "linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
-        "github": "Default one"
-    },
-    {
-        "name": "Jacob Padilla",
-        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_1278_Jacob%20Padilla.jpeg",
-        "linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
-        "github": "https://github.com/Billy-bob-0"
-    },
-    {
-        "name": "Christian Neri-Doroteo",
-        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/Christian.jpg",
-        "linkedin": "..",
-        "github": ".."
-    },
-    {
-        "name": "Dylanie Polson",
-        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/FD47EECE-6AD1-4B7D-9833-DC38236A9675_Dylanie%20Polson.jpeg",
-        "linkedin": "https://www.linkedin.com/in/dylanie-p-675555345",
-        "github": "https://github.com/dylanierose"
-    },
-    {
-        "name": "Amen Negash",
-        "image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_5058_Amen%20Negash.jpeg",
-        "linkedin": "www.linkedin.com/in/amen-negash-702441278",
-        "github": "https://github.com/AmenNegash"
-    },
-    {
-        "name": "Joey Zambreno",
-        "image": "/static/images/profiles/JoeyZ.jpg",
-        "linkedin": "https://www.linkedin.com/in/joey-zambreno/",
-        "github": "https://github.com/JoeyZeee"
-    }
+	{
+		"name": "Mr. (Mike) Tierney",
+		"image": "/images/profiles/michael_tierney.jpg",
+		"linkedin": "https://www.linkedin.com/in/mike-tierney-63665175",
+		"github": "https://github.com/example1"
+	},
+	{
+		"name": "Alex Cantor",
+		"image": "/images/profiles/alex_cantor.jpg",
+		"linkedin": "https://www.linkedin.com/in/amcantor",
+		"github": "https://github.com/alex-cantor"
+	},
+	{
+		"name": "Irene Alobo",
+		"image": "/images/profiles/irene_alobo.jpg",
+		"linkedin": "https://www.linkedin.com/in/irene-alobo",
+		"github": "https://github.com/Jossey28"
+	},
+	{
+		"name": "Lincoln Kessel",
+		"image": "/images/profiles/lincoln_kessel.jpg",
+		"linkedin": "https://www.linkedin.com/in/lincoln-kessel-663677361/"
+	},
+	{
+		"name": "Jefrey (Jef) Allen",
+		"image": "/images/profiles/jefrey_allen.jpg",
+		"linkedin": "https://www.linkedin.com/in/jefreyallen",
+		"github": "https://www.github.com/invasivelycoding"
+	},
+	{
+		"name": "Finian (Finn) Huggins",
+		"image": "/images/profiles/finian_huggins.jpg",
+		"linkedin": "https://www.linkedin.com/in/finianhuggins",
+		"github": "https://www.github.com/Hugg22"
+	},
+	{
+		"name": "Cooper Sanders",
+		"image": "/images/profiles/cooper_sanders.jpg",
+		"linkedin": "https://www.linkedin.com/in/cooper-sanders",
+		"github": "https://github.com/meyyh"
+	},
+	{
+		"name": "Michael Flecha",
+		"image": "/images/profiles/michael_flecha.jpg",
+		"linkedin": "https://www.linkedin.com/in/michael-flecha",
+		"github": "https://github.com/s0up9"
+	},
+	{
+		"name": "Johnlee Vy",
+		"image": "/images/profiles/johnlee_vy.jpg",
+		"linkedin": "https://www.linkedin.com/in/johnlee-vy-066350338",
+		"github": "https://github.com/JohnleeVy"
+	},
+	{
+		"name": "Bryan Neri-Doroteo",
+		"image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/Bryan.jpg",
+		"linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+		"github": "Default one"
+	},
+	{
+		"name": "Jacob Padilla",
+		"image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_1278_Jacob%20Padilla.jpeg",
+		"linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+		"github": "https://github.com/Billy-bob-0"
+	},
+	{
+		"name": "Christian Neri-Doroteo",
+		"image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/Christian.jpg",
+		"linkedin": "..",
+		"github": ".."
+	},
+	{
+		"name": "Dylanie Polson",
+		"image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/FD47EECE-6AD1-4B7D-9833-DC38236A9675_Dylanie%20Polson.jpeg",
+		"linkedin": "https://www.linkedin.com/in/dylanie-p-675555345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+		"github": "https://github.com/dylanierose"
+	},
+	{
+		"name": "Amen Negash",
+		"image": "https://livedmpsk12ia-my.sharepoint.com/personal/642108_student_dmschools_org/Documents/Apps/Microsoft%20Forms/IATechED%20Profile%20Submission%20Form/Question/IMG_5058_Amen%20Negash.jpeg",
+		"linkedin": "www.linkedin.com/in/amen-negash-702441278",
+		"github": "https://github.com/AmenNegash"
+	},
+	{
+		"name": "Joey Zambreno",
+		"image": "/images/profiles/JoeyZ.jpg",
+		"linkedin": "https://www.linkedin.com/in/joey-zambreno/",
+		"github": "https://github.com/JoeyZeee"
+	}
 ]

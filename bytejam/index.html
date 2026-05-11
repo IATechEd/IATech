@@ -1,232 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteSizedShenanigans: We Travel | ByteJam</title>
-    <link rel="icon" type="image/png" href="/static/images/logo.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-        window.onload = () => {
-            const wrapper = document.getElementById("tiles");
-    
-            let columns = 0,
-                rows = 0,
-                toggled = false;
-    
-            const toggle = () => {
-                toggled = !toggled;
-                document.body.classList.toggle("toggled");
-            };
-    
-            const handleOnClick = index => {
-                toggle();
-                anime({
-                    targets: ".tile",
-                    opacity: toggled ? 0 : 1,
-                    delay: anime.stagger(50, {
-                        grid: [columns, rows],
-                        from: index
-                    })
-                });
-            };
-    
-            const createTile = index => {
-                const tile = document.createElement("div");
-                tile.classList.add("tile");
-                tile.style.opacity = toggled ? 0 : 1;
-                tile.onclick = event => event.stopPropagation(); // Prevents triggering handleBackgroundClick
-                return tile;
-            };
-    
-            const createTiles = quantity => {
-                Array.from(Array(quantity)).forEach((_, index) => {
-                    wrapper.appendChild(createTile(index));
-                });
-            };
-    
-            const createGrid = () => {
-                wrapper.innerHTML = "";
-                const size = document.body.clientWidth > 800 ? 100 : 50;
-                columns = Math.floor(document.body.clientWidth / size);
-                rows = Math.floor(document.body.clientHeight / size);
-    
-                wrapper.style.setProperty("--columns", columns);
-                wrapper.style.setProperty("--rows", rows);
-                createTiles(columns * rows);
-            };
-    
-            createGrid();
-            window.onresize = () => createGrid();
-    
-            // Calculate nearest tile index based on click position
-            const getTileIndexFromMousePosition = (x, y) => {
-                const tileWidth = document.body.clientWidth / columns;
-                const tileHeight = document.body.clientHeight / rows;
-    
-                const col = Math.floor(x / tileWidth);
-                const row = Math.floor(y / tileHeight);
-    
-                return row * columns + col;
-            };
-    
-            // Handle button clicks to trigger the animation
-            document.addEventListener("click", event => {
-                if (event.target.tagName.toLowerCase() === "button") {
-                    const index = getTileIndexFromMousePosition(event.clientX, event.clientY);
-                    handleOnClick(index);
-                }
-            });
-    
-            const blob = document.getElementById("blob");
-            window.onpointermove = event => { 
-                const { clientX, clientY } = event;
-                blob.animate({
-                    left: `${clientX}px`,
-                    top: `${clientY}px`
-                }, { duration: 3000, fill: "forwards" });
-            };
-        };
-    </script>
-    
-    <style>
-        #blob {
-            background-color: white;
-            height: 34vmax;
-            aspect-ratio: 1;
-            position: fixed; /* Changed to fixed */
-            left: 50%;
-            top: 50%;
-            translate: -50% -50%;
-            border-radius: 50%;
-            background: linear-gradient(to right, aquamarine, mediumpurple);
-            animation: rotate 20s infinite;
-            opacity: 1;
-            z-index: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ByteSizedShenanigans: We Travel | ByteJam</title>
+	<link rel="icon" type="image/png" href="/static/images/logo.png" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="script.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+	<script>
+		window.onload = () => {
+			const wrapper = document.getElementById("tiles");
+	
+			let columns = 0,
+				rows = 0,
+				toggled = false;
+	
+			const toggle = () => {
+				toggled = !toggled;
+				document.body.classList.toggle("toggled");
+			};
+	
+			const handleOnClick = index => {
+				toggle();
+				anime({
+					targets: ".tile",
+					opacity: toggled ? 0 : 1,
+					delay: anime.stagger(50, {
+						grid: [columns, rows],
+						from: index
+					})
+				});
+			};
+	
+			const createTile = index => {
+				const tile = document.createElement("div");
+				tile.classList.add("tile");
+				tile.style.opacity = toggled ? 0 : 1;
+				tile.onclick = event => event.stopPropagation(); // Prevents triggering handleBackgroundClick
+				return tile;
+			};
+	
+			const createTiles = quantity => {
+				Array.from(Array(quantity)).forEach((_, index) => {
+					wrapper.appendChild(createTile(index));
+				});
+			};
+	
+			const createGrid = () => {
+				wrapper.innerHTML = "";
+				const size = document.body.clientWidth > 800 ? 100 : 50;
+				columns = Math.floor(document.body.clientWidth / size);
+				rows = Math.floor(document.body.clientHeight / size);
+	
+				wrapper.style.setProperty("--columns", columns);
+				wrapper.style.setProperty("--rows", rows);
+				createTiles(columns * rows);
+			};
+	
+			createGrid();
+			window.onresize = () => createGrid();
+	
+			// Calculate nearest tile index based on click position
+			const getTileIndexFromMousePosition = (x, y) => {
+				const tileWidth = document.body.clientWidth / columns;
+				const tileHeight = document.body.clientHeight / rows;
+	
+				const col = Math.floor(x / tileWidth);
+				const row = Math.floor(y / tileHeight);
+	
+				return row * columns + col;
+			};
+	
+			// Handle button clicks to trigger the animation
+			document.addEventListener("click", event => {
+				if (event.target.tagName.toLowerCase() === "button") {
+					const index = getTileIndexFromMousePosition(event.clientX, event.clientY);
+					handleOnClick(index);
+				}
+			});
+	
+			const blob = document.getElementById("blob");
+			window.onpointermove = event => { 
+				const { clientX, clientY } = event;
+				blob.animate({
+					left: `${clientX}px`,
+					top: `${clientY}px`
+				}, { duration: 3000, fill: "forwards" });
+			};
+		};
+	</script>
+	
+	<style>
+		#blob {
+			background-color: white;
+			height: 34vmax;
+			aspect-ratio: 1;
+			position: fixed; /* Changed to fixed */
+			left: 50%;
+			top: 50%;
+			translate: -50% -50%;
+			border-radius: 50%;
+			background: linear-gradient(to right, aquamarine, mediumpurple);
+			animation: rotate 20s infinite;
+			opacity: 1;
+			z-index: 0;
+		}
 
-        #blur {
-            height: 100%;
-            width: 100%;
-            position: fixed; /* Changed to fixed */
-            top: 0;
-            left: 0;
-            z-index: 0;
-            backdrop-filter: blur(10vmax);
-        }
-        
-        :root {
-            --g1: rgb(0, 34, 101);
-            --g2: rgb(19, 52, 199);
-        }
+		#blur {
+			height: 100%;
+			width: 100%;
+			position: fixed; /* Changed to fixed */
+			top: 0;
+			left: 0;
+			z-index: 0;
+			backdrop-filter: blur(10vmax);
+		}
+		
+		:root {
+			--g1: rgb(0, 34, 101);
+			--g2: rgb(19, 52, 199);
+		}
 
-        @keyframes background-pan {
-            from {
-                background-position: 0% center;
-            }
-            
-            to {
-                background-position: -200% center;
-            }
-        }
+		@keyframes background-pan {
+			from {
+				background-position: 0% center;
+			}
+			
+			to {
+				background-position: -200% center;
+			}
+		}
 
-        body {
-            animation: background-pan 10s linear infinite;
-            background: linear-gradient(
-                to right,
-                var(--g1),
-                var(--g2),
-                var(--g1)
-            );
-            background-size: 200%;
-            height: 100vh;
-            overflow-x: hidden;
-            margin: 0px;
-        }
+		body {
+			animation: background-pan 10s linear infinite;
+			background: linear-gradient(
+				to right,
+				var(--g1),
+				var(--g2),
+				var(--g1)
+			);
+			background-size: 200%;
+			height: 100vh;
+			overflow-x: hidden;
+			margin: 0px;
+		}
 
-        body.toggled {
-            animation: none;
-        }
+		body.toggled {
+			animation: none;
+		}
 
-        body.toggled > #title {
-            opacity: 0;
-        }
+		body.toggled > #title {
+			opacity: 0;
+		}
 
-        body.toggled > #icon {
-            opacity: 1;
-        }
+		body.toggled > #icon {
+			opacity: 1;
+		}
 
-        #tiles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            height: 100vh;
-            width: 100vw;
-            pointer-events: auto;
-            display: grid;
-            grid-template-columns: repeat(var(--columns), 1fr);
-            grid-template-rows: repeat(var(--rows), 1fr);
-        }
+		#tiles {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			height: 100vh;
+			width: 100vw;
+			pointer-events: auto;
+			display: grid;
+			grid-template-columns: repeat(var(--columns), 1fr);
+			grid-template-rows: repeat(var(--rows), 1fr);
+		}
 
-        .tile {
-            cursor: pointer;
-            position: relative;
-        }
+		.tile {
+			cursor: pointer;
+			position: relative;
+		}
 
-        .tile:hover:before {
-            background-color: rgb(17,17,17);
-        }
+		.tile:hover:before {
+			background-color: rgb(17,17,17);
+		}
 
-        .tile:before {
-            background-color: rgb(15, 15, 15);
-            content: "";
-            inset: 0.5px;
-            position: absolute;
-        }
+		.tile:before {
+			background-color: rgb(15, 15, 15);
+			content: "";
+			inset: 0.5px;
+			position: absolute;
+		}
 
-        /* Don't judge me... */
-        * {
-            z-index: 1;
-        }
+		/* Don't judge me... */
+		* {
+			z-index: 1;
+		}
 
-        .tile {
-            width: 100%;
-            height: 100%;
-        }
+		.tile {
+			width: 100%;
+			height: 100%;
+		}
 
-        #tiles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            height: 100vh;
-            width: 100vw;
-            pointer-events: auto;
-        }
-    </style>
+		#tiles {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			height: 100vh;
+			width: 100vw;
+			pointer-events: auto;
+		}
+	</style>
 </head>
 <body class="bg-gray-900 text-gray-200 font-sans overflow-hidden">
-    <div id="blob"></div>
-    <div id="blur"></div>
-    <div id="tiles" class="relative z-20 grid" style="height: 100vh; width: 100vw; grid-template-columns: repeat(var(--columns), 1fr); grid-template-rows: repeat(var(--rows), 1fr);pointer-events: auto;">
-    </div>
-    <div class="flex items-center justify-center h-screen">
-        <button class="bg-gray-800 text-gray-100 py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:text-green-400 transition-transform" onclick="scrollToYear()">Click Me to Time Travel</button>
-    </div>
-    
-    <div id="year-section" class="flex flex-col items-center justify-center h-screen text-center">
-        <div id="year" class="text-6xl font-bold text-green-400">Year will appear here</div>
-        <div id="era" class="text-2xl text-gray-500 mt-4">Era will appear here</div>
-        <button class="mt-8 bg-gray-800 text-gray-100 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 hover:text-green-400 transition-transform" onclick="scrollToModals()">Explore More</button>
-    </div>
+	<div id="blob"></div>
+	<div id="blur"></div>
+	<div id="tiles" class="relative z-20 grid" style="height: 100vh; width: 100vw; grid-template-columns: repeat(var(--columns), 1fr); grid-template-rows: repeat(var(--rows), 1fr);pointer-events: auto;">
+	</div>
+	<div class="flex items-center justify-center h-screen">
+		<button class="bg-gray-800 text-gray-100 py-4 px-8 rounded-lg shadow-lg hover:bg-gray-700 hover:text-green-400 transition-transform" onclick="scrollToYear()">Click Me to Time Travel</button>
+	</div>
+	
+	<div id="year-section" class="flex flex-col items-center justify-center h-screen text-center">
+		<div id="year" class="text-6xl font-bold text-green-400">Year will appear here</div>
+		<div id="era" class="text-2xl text-gray-500 mt-4">Era will appear here</div>
+		<button class="mt-8 bg-gray-800 text-gray-100 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 hover:text-green-400 transition-transform" onclick="scrollToModals()">Explore More</button>
+	</div>
 
-    <div id="modal-section" class="grid grid-cols-3 gap-20 p-[4rem] w-screen h-screen">
-        <!-- Modals will be dynamically loaded here -->
-    </div>
+	<div id="modal-section" class="grid grid-cols-3 gap-20 p-[4rem] w-screen h-screen">
+		<!-- Modals will be dynamically loaded here -->
+	</div>
 
-    <button class="fixed bottom-5 left-5 bg-gray-800 text-gray-100 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 hover:text-red-400 transition-transform" onclick="restart()">Restart</button>
+	<button class="fixed bottom-5 left-5 bg-gray-800 text-gray-100 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 hover:text-red-400 transition-transform" onclick="restart()">Restart</button>
 </body>
 </html>

@@ -28,11 +28,11 @@ We welcome contributions to improve the website! You can contribute by modifying
 
 1. **Fork this repository** to your GitHub account.
 2. **Clone your fork** to your local machine.
-3. **Navigate to the `/json/` directory** and edit the relevant JSON file to:
-   - Add yourself as a member.
-   - Add an achievement.
-   - Add a project.
-   - Make any other necessary changes.
+3. **Navigate to the `JSON/` directory** and edit the relevant JSON file to:
+	- Add yourself as a member.
+	- Add an achievement.
+	- Add a project.
+	- Make any other necessary changes.
 4. **Commit your changes** and push them to your fork.
 5. **Create a Pull Request (PR)** to propose your changes to this repository.
 
