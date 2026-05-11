@@ -1,0 +1,242 @@
+.bg-gold {
+    background-color: #ffff5a77;
+}
+
+.bg-silver {
+    background-color: #c0c0c08a;
+}
+
+.bg-bronze {
+    background-color: #c59948ad;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #232323;
+    color: #cdcdcd;
+}
+
+main {
+    width: calc(100% - 240px);
+    max-width: 680px;
+    margin: 100px auto;
+}
+
+p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+#menuToggle {
+    display: block;
+    position: sticky;
+    top: 50px;
+    right: 50px;
+    left: auto;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 1rem;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: rgb(0, 183, 255);
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #ffffff;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 50px;
+    padding-top: 125px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: #000000;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+nav .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center align items */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space items apart */
+}
+
+.logo {
+    margin-right: auto;
+    /* Push logo to the right */
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menu li label {
+    cursor: pointer;
+}
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+.logo img {
+    height: 64px;
+}
+
+.animated-border {
+    position: relative;
+    overflow: visible;
+    /* Ensure the border is visible */
+    border-radius: inherit;
+    /* Match the border radius of the parent */
+    padding: 0.5rem 1rem;
+    /* Adjust padding for snug fit */
+    font-size: 1.25rem;
+    /* Maintain larger text */
+    line-height: 1.75rem;
+    /* Maintain readability */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Optional: Enhance visibility */
+    display: inline-block;
+    /* Shrink-wrap the width to fit content */
+}
+
+.animated-border::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    /* Thickness of the animated border */
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff, #00ff00, #0000ff, #ff0000);
+    background-size: 300% 300%;
+    border-radius: inherit;
+    /* Match the border radius of the parent */
+    z-index: -1;
+    /* Position the border behind the content */
+    animation: borderAnimation 8s linear infinite;
+}
+
+/* Add transition to the base nav-link class */
+.nav-link {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Apply glow effect on hover */
+.nav-link:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (min-width : 1024px) {
+    menu {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #menu li {
+        margin: 0 15px;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    #menuToggle {
+        display: none;
+    }
+
+    .logo {
+        position: relative;
+    }
+}
