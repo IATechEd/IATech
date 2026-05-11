@@ -1,6 +1,6 @@
-# Iowa Technology Club Website
+# IATechED Website
 
-Welcome to the Iowa Technology Club website repository! This project powers the official site of our club, showcasing our achievements, members, and projects. If you're looking to understand how the website works or want to contribute, you've come to the right place.
+Welcome to the IATechED website repository! This project contains the official site of our club, showcasing our achievements, members, and projects. If you're looking to understand how the website works or want to contribute, you've come to the right place.
 
 ## Project Overview
 
@@ -8,15 +8,22 @@ The website is built using HTML, vanilla JavaScript, and TailwindCSS. The conten
 
 ### Technologies Used
 
-- **HTML**: Structure of the website.
-- **Vanilla JavaScript**: Handles dynamic content rendering.
-- **TailwindCSS**: Provides a responsive and modern design.
+| Technology Used | Purpose |
+| --------------- | ------- |
+| HTML            | Provides structure and text for the website. |
+| Javascript (vanilla) | Handles dynamic content rendering and minor scripting. |
+| Tailwind CSS    | Provides design and color choices. |
 
 ## Directory Structure
 
-- `index.html`: The main file that ties everything together.
-- `/static/`: This directory contains all static assets for the website
-   - `/json/`: This directory contains all the JSON files used to store the content displayed on the website.
+- `index.html`: The main webpage file, what appears when you open iateched.org.
+- `/html/`: This directory contains the subpages, which render all of the content not contained on the main webpage.
+- `/bytejam/`: This directory it contains our work for Bytejam 202X, a time travel simulation which won the student's choice award. 
+- `/guide/`: This directory contains a list of small security changes anyone can make to enhance their online safety, written by our members.
+- `/theprivacyplaybook`: In Progress
+- `/static/`: This directory contains all static assets for the website such as images and links.
+    - `/json/`: This directory contains all the JSON files used to store the content displayed on the website.
+    - `/images/`: This directory contains all of the images in our website, including logos and profile pictures. 
 
 ## How It Works
 
@@ -40,6 +47,6 @@ Once your PR is reviewed and approved, your changes will be merged, and the webs
 
 ## Contact
 
-If you have any questions or need help with contributing, feel free to reach out to the Iowa Technology Club team at [contact@iateched.org](mailto:cotact@iateched.org).
+If you have any questions or need help with contributing, feel free to reach out to the IATechED team at [contact@iateched.org](mailto:cotact@iateched.org).
 
 Happy coding!
