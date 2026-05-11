@@ -47,6 +47,6 @@ Once your PR is reviewed and approved, your changes will be merged, and the webs
 
 ## Contact
 
-If you have any questions or need help with contributing, feel free to reach out to the IATechED team at [contact@iateched.org](mailto:centraliowacyber@gmail.com).
+If you have any questions or need help with contributing, feel free to reach out to the IATechED team at [centraliowacyber@gmail.com](mailto:centraliowacyber@gmail.com).
 
 Happy coding!
